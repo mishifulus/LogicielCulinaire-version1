@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>MySpa</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="MySpa">
+        <meta name="keywords" content="HTML, Aplicacion">
+        <meta name="author" content="Los Estudiabaantes">
+        <link rel="stylesheet" type="text/css" href="style/bootstrap/css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css"  href="style/font_awesome_5_15_3/css/all.min.css">
+        <link rel="stylesheet" type="text/css" href="style/principal.css"/>
+    </head>
+    <body>
+            
+                    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+                        <div class="container-fluid">
+                                    <a class="navbar-brand" href="index.html"><img src="media/img/logo.png" alt="Logo" width="70" class="d-inline-block align-text-top"></a>
+                                    <a class="navbar-brand" href="#" onclick="cargarInfoAcercade();">Acerca de...</a>
+                                    <a class="navbar-brand" href="#" onclick="cargarInfoTratamientos();">Tratamientos</a>
+                                    <a class="navbar-brand" href="#" onclick="cargarInfoEmpleados();">Empleados</a>
+                                    <a class="navbar-brand" href="#" onclick="cargarInfoContacto();">Contacto</a>  
+                        </div>
+                    </nav>
+            
+            <div class="container-fluid" id="contenedorMain">
+            
+                <div class="my-3 d-grid gap-2 d-md-flex justify-content-md-end">
+                    <a href="gestion/sesion/iniciarsesion.html"><button class="btn btn-outline-info me-md-2 btn-lg">Iniciar sesi&oacute;n</button></a>
+                    <a href="gestion/sesion/registrarse.html"><button class="btn btn-outline-info me-md-2 btn-lg">Registrarse</button></a>
+                </div>
+                
+            <!-- Presentación -->
+            <div class="row">
+                <div class="col-12 mb-5">
+                    <h1 class="text-success text-center fs-1">¡Bienvenidos a MySpa!</h1>
+                </div>
+            </div>
+            
+            <!-- Info -->
+            <div class="row">
+                <div class="col-5 mb-4">
+                    <p>
+                        Hola a todos, bienvenidos a MySpa, el lugar que tu cuerpo y mente buscaban, aqu&iacute; encontrar&aacute;s
+                        todo lo que buscas y m&aacute;s para el tratado de tu piel, con el personal m&aacute;s experto
+                        y capacitado de la zona, que te brindar&aacute;n el confort suficiente para querer volver. <br>
+                        Adelante, eres bienvenid@ a pasar por la p&aacute;gina para agendar tu cita y recuerda...
+                        <b>cuerpo fresco, mente clara.</b>
+                    </p>
+                </div>
+            
+            <!-- Fotos -->
+                <div class="col-7 mb-4">
+                    <div id="carouselPhotos" class="carousel slide" data-bs-ride="carousel">
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <img src="media/img/imgBonita.jpg" class="d-block w-75 mx-auto" alt="Imagen bonita">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="media/img/imgTratamientoUno.jpg" class="d-block w-75 mx-auto" alt="Tratamientos">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="media/img/imgInstalacionesUno.jpg" class="d-block w-75 mx-auto" alt="Instalaciones">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="media/img/imgTratamientoDos.jpg" class="d-block w-75 mx-auto" alt="Tratamientos">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="media/img/imgInstalacionesDos.jpg" class="d-block w-75 mx-auto" alt="Instalaciones">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="media/img/imgTratamientoTres.jpg" class="d-block w-75 mx-auto" alt="Tratamientos">
+                            </div>
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselPhotos" data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Anterior</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#carouselPhotos" data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Siguiente</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Ver reseñas -->
+           <div class="row">
+               <div class="col-12 mb-4">
+                   <div class="d-grid gap-2 mb-4 col-6 mx-auto">
+                        <a href="#" onclick="cargarInfoContacto();" class="btn btn-outline-info btn-lg" role="button">Ver Reseñas</a>
+                    </div>
+               </div>
+           </div>
+            
+           <!-- Ubicación -->
+           <div class="row">
+               <div class="col-12 mb-4">
+                   <h3 class="text-info fs-3 text-center"><i>Ubicaci&oacute;n</i></h3>
+                   <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3723.236796297753!2d-101.58337303603332!3d21.06320254197968!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x842b963652f40f0d%3A0xa7d88da0ad8eff8a!2sUniversidad%20Tecnol%C3%B3gica%20de%20Le%C3%B3n!5e0!3m2!1ses-419!2smx!4v1625538915528!5m2!1ses-419!2smx" width="1235" height="500" style="border:0;"></iframe>
+               </div>
+           </div>
+           
+        </div>
+            
+            <!-- Pie de página -->
+           <footer>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xs-12 col-md-6">
+                            <h6 class="text-muted lead">CONTACTO:</h6>
+                            <h6 class="text-muted">
+                                Blvd. Universidad Tecnológica #225 Col. San Carlos<br>
+                                CP. 37670 León, Gto. Mex. <br>
+                                Tel (477) 7 10 00 20 y (477) 233 74 89<br>
+                            </h6>
+                        </div>
+                        <div class="col-xs-12 col-md-6">
+                            <div class="pull-right">
+                                <h6 class="text-muted lead">ENCUENTRANOS EN LAS REDES</h6>
+                                <div class="redes-footer">
+                                    <a href="https://www.facebook.com/"><img src="media/img/facebook.png" class="logos"></a>
+                                    <a href="https://instagram.com/"><img src="media/img/instagram.png" class="logos"></a>
+                                    <a href="https://www.youtube.com/"><img src="media/img/youtubelogo.png" class="logos"></a>
+                                </div>
+                            </div>
+                        <div class="row"> <p class="text-muted small text-right">Los Estudiabaantes @2021.<br> Todos los derechos reservados.</p></div>
+                        </div>
+                    </div>  
+                </div>
+            </footer>
+    
+        <script type='text/javascript' src='js/jquery/jquery-3.6.0.min.js'></script>
+        <!-- Y después se colocan las referencias a los Java Scripts Bootstrap-->
+        <script type='text/javascript' src="style/bootstrap/js/bootstrap.bundle.js"></script>
+        <script type='text/javascript' src='js/jquery/main.js'></script>
+    </body>
+</html>

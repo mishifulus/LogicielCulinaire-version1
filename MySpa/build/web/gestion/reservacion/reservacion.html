@@ -1,0 +1,292 @@
+<div class="row my-3">
+    <div class="row mb-3 col-md-10 align-items-center justify-content-center" id="titulo">
+        <div class="col-md-6">
+            <h2 class="fw-bold text-center text-success">RESERVACIONES</h2>
+        </div>
+        <div class="col-md-4">
+            <div class="input-group rounded">
+                <input id="txtFiltro" type="search" class="form-control rounded-end" style="border-radius: 20px" placeholder="Buscar" aria-label="Search"
+                       aria-describedby="search-addon" />
+                <button class="btn btn-outline-success border-1 rounded-start" style="border-radius: 20px;" onclick="buscarReserva();">
+                    <i class="fas fa-search"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row my-3">
+    <div id="divDetalleReserva" class="col-4">
+        <div class="card">
+            <div class="card-header">
+                <span class="text-success h5">Detalle de la reservación</span>
+                <button class="btn-sm btn-outline-danger float-end" onclick="setFormularioDetalleVisible(false);">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+                <div class="card-body">
+                    <div class="form">
+                            <input id="txtCodigoReserva" type="text" class="form-control" readonly style="display:none"/>
+                            <input id="txtCodigoCliente" type="text" class="form-control" readonly style="display:none"/>
+                        <div class="my-3">
+                            <label for="txtsearchCB" class="form-label">Buscar Cliente:</label>
+                            <input id="txtsearchCB" type="text" class="form-control" maxlength="30" />
+                        </div>
+                        <button class="btn btn-success" onclick="buscarClienteReserva();"><i class="fas fa-search"></i>&nbsp;Buscar Cliente</button><br>
+                        <div class="my-3">
+                            <label for="txtCliente" class="form-label">Cliente:</label>
+                            <input id="txtCliente" type="text" class="form-control" maxlength="30" readonly/>
+                        </div>
+                            <div class="my-3">
+                            <label for="sucursalReserva" class="form-label">Sucursal:</label>
+                            <select id="sucursalReserva">
+                                
+                            </select>
+                        </div>
+                        <button class="btn btn-success" onclick="buscarSalaReserva();"><i class="fas fa-search"></i>&nbsp;Buscar Sala</button><br>
+                        <div class="my-3">
+                            <label for="salaReserva" class="form-label">Sala:</label>
+                            <select id="salaReserva">
+                                
+                            </select>
+                        </div>
+                        <div class="my-3">
+                            <label for="txtFecha" class="form-label">Fecha:</label>
+                            <input id="txtFecha" type="date" class="form-control" onkeypress='return event.charCode >= 48 && event.charCode <= 57 || event.charCode === 58 || event.charCode === 47'/>
+                        </div>
+                        <button class="btn btn-success" onclick="consultarHorario();"><i class="fas fa-search"></i>&nbsp;Consultar disponibilidad</button><br>
+                        <div class="my-3">
+                            <label for="txtHorario" class="form-label">Horario:</label>
+                            <select id="txtHorario">
+                                
+                            </select>
+                        </div>
+                        <div class="my-3">
+                            <label for="txtEstatus" class="form-label">Estatus:</label>
+                            <input id="txtEstatus" type="text" class="form-control" readonly style="display:none"/>
+                        </div>
+                            <div class="text-center my-4">
+                                <button class="btn btn-success" onclick="guardarReserva();"><i class="fas fa-save"></i>&nbsp;&nbsp;Guardar</button>
+                                <button class="btn btn-primary" onclick="limpiarFormulario();"><i class="fas fa-backspace"></i>&nbsp;&nbsp;Limpiar</button>
+                            </div>
+                    </div> 
+                </div>
+        </div>
+    </div>
+    <div id="divTablaReservas" class="col-12">
+        <div class="card">
+            <div class="card-header">
+                <span class="text-success h5">Cat&aacute;logo de Reservas</span>
+                <button class="btn-sm btn-outline-primary float-end mx-3" onclick="refrescarTablaInactivos();">
+                    &nbsp;&nbsp;Inactivos&nbsp;
+                </button>
+                <button class="btn-sm btn-outline-primary float-end mx-3" onclick="refrescarTablaReserva();">
+                    &nbsp;&nbsp;Activos&nbsp;
+                </button>
+                <button class="btn-sm btn-outline-danger float-end mx-3" onclick="cerrarModulo();">
+                    <i class="fas fa-times"></i>&nbsp;&nbsp;Cerrar M&oacute;dulo&nbsp;
+                </button>
+                <button class="btn-sm btn-outline-success float-end mx-3" onclick="agregarNuevo();">
+                    <i class="fas fa-check"></i>&nbsp;&nbsp;Agregar nuevo&nbsp;
+                </button>
+            </div>
+            <div class="card-body">
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Fecha</th>
+                            <th>Hora Inicio</th>
+                            <th>Hora Fin</th>
+                            <th>Cliente</th>
+                            <th>Sala</th>
+                            <th>Estatus</th>
+                            <th></th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody id="tbodyReservas">
+                                    
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row my-3">
+    <div id="divTablaClientesReserva" class="col-4">
+        <div class="card">
+            <div class="card-header">
+                <span class="text-success h5">Clientes Disponibles</span>
+                <button class="btn-sm btn-outline-danger float-end mx-3" onclick="cerrarTablaC();">
+                    <i class="fas fa-times"></i></button>
+            </div>
+            <div class="card-body">
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th>Nombre</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody id="tbodyClientesReserva">
+                                    
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row my-3">
+    <div id="divServicioDetalle" class="col-4">
+        <div class="card">
+            <div class="card-header">
+                <span class="text-success h5">Datos del Servicio</span>
+                <button class="btn-sm btn-outline-danger float-end" onclick="setFormularioDetalleVisibleServicio(false);">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+                <div class="card-body">
+                    <div class="form">
+                            <input id="txtCodigoReserva" type="text" class="form-control" readonly style="display:none"/>
+                            <input id="txtIdEmpleadoReserva" type="text" class="form-control" readonly style="display:none"/>
+                        <div class=" my-3 form-group">
+                            <label for="txaReservacion">Datos de la reservación:</label>
+                            <textarea class="form-control rounded-0" id="txaReservacion" rows="6"></textarea>
+                        </div>
+                        <div class="my-3">
+                            <label for="txtSearchEB" class="form-label">Buscar empleado:</label>
+                            <input id="txtSearchEB" type="text" class="form-control" maxlength="30"/>
+                        </div>
+                        <button class="btn btn-success" onclick="buscarEmpleadoReserva();"><i class="fas fa-search"></i>&nbsp;Buscar Empleado</button><br>
+                        <div class="my-3">
+                            <label for="txtEmpleadoReserva" class="form-label">Empleado seleccionado:</label>
+                            <input id="txtEmpleadoReserva" type="text" class="form-control" maxlength="30" readonly/>
+                        </div>
+                        <button class="btn btn-success" onclick="cargarTratamientosReserva();"><i class="fas fa-search"></i>&nbsp;Consultar tratamientos</button><br>
+                        <div class="my-3">
+                            <table class="table table-hover">
+                            <thead>
+                                <tr>
+                                <th>Tratamientos</th>
+                                <th></th>
+                                <th></th>
+                                <th></th>
+                                <th></th>
+                                <th></th>
+                                </tr>
+                            </thead>
+                            <tbody id="tbodyServicioTratamientos">
+                                
+                            </tbody>
+                            </table>
+                        </div>
+                        <div class="my-3">
+                            <label for="txtTotal" class="form-label">PRECIO</label>
+                            <input id="txtTotal" type="text" class="form-control" maxlength="30" readonly/>
+                        </div>
+                            <div class="text-center my-4">
+                                <button class="btn btn-success" onclick="guardarServicio();"><i class="fas fa-save"></i>&nbsp;&nbsp;Guardar</button>
+                                <button class="btn btn-primary" onclick="limpiarFormulario();"><i class="fas fa-backspace"></i>&nbsp;&nbsp;Limpiar</button>
+                            </div>
+                    </div> 
+                </div>
+        </div>
+    </div>
+    <div id="divEmpleadoReserva" class="col-4">
+        <div class="card">
+            <div class="card-header">
+                <span class="text-success h5">Empleados disponibles:</span>
+                <button class="btn-sm btn-outline-danger float-end mx-3" onclick="cerrarTablaE();">
+                    <i class="fas fa-times"></i></button>
+            </div>
+            <div class="card-body">
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th>Nombre</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody id="tbodyEmpleadosReserva">
+                                    
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div id="divProductoReserva" class="col-4">
+        <div class="card">
+            <div class="card-header">
+                <span class="text-success h5">Elige un producto</span>
+                <button class="btn-sm btn-outline-danger float-end mx-3" onclick="cerrarTablaP();">
+                    <i class="fas fa-times"></i></button>
+            </div>
+            <div class="card-body">
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th>Nombre</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody id="tbodyProductosReserva">
+                                    
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div id="divTratamientoReserva" class="col-4">
+        <div class="card">
+            <div class="card-header">
+                <span class="text-success h5">Elige un tratamiento</span>
+                <button class="btn-sm btn-outline-danger float-end mx-3" onclick="cerrarTablaT();">
+                    <i class="fas fa-times"></i></button>
+            </div>
+            <div class="card-body">
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th>Nombre</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody id="tbodyTratamientosReserva">
+                                    
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div id="divTratamientosProductosReserva" class="col-4">
+        <div class="card">
+            <div class="card-header">
+                <span class="text-success h5" id="tratamientoTitulo">x</span>
+                        <span class="float-end"><a href="#" class="text-success" onclick="cargarProductosReserva();">
+                                <i class="fas fa-plus"></i>&nbsp;Agregar productos
+                    </a></span>
+                <button class="btn-sm btn-outline-danger float-end mx-3" onclick="cerrarTablaTP();">
+                    <i class="fas fa-times"></i></button>
+            </div>
+            <div class="card-body">
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th>Clave</th>
+                            <th>Nombre</th>
+                            <th>Precio</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody id="tbodyTratamientosProductosReserva">
+                                    
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript" src="gestion/reservacion/cargarReservacion.js"></script>
+<script type="text/javascript">
+    inicializarModuloReserva();
+</script>

@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Registrarse | MySpa</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="MySpa">
+        <meta name="keywords" content="HTML, Aplicacion">
+        <meta name="author" content="Los Estudiabaantes">
+        <link rel="stylesheet" type="text/css" href="../../style/bootstrap/css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css"  href="../../style/font_awesome_5_15_3/css/all.min.css">
+        <link rel="stylesheet" type="text/css" href="../../style/principal.css"/>
+    </head>
+    <body>
+                    <nav class="navbar navbar-dark bg-dark">
+                        <div class="container-fluid">
+                            <a class="navbar-brand" href="../../index.html"><img src="../../media/img/logo.png" alt="Logo" width="70" class="d-inline-block align-text-top"></a>
+                            <a class="navbar-brand" href="../../index.html">Inicio</a>
+                            <a class="navbar-brand" href="iniciarsesion.html">Iniciar sesi&oacute;n</a>
+                        </div>
+                    </nav>
+            
+        <div class="container-fluid">
+            
+            <!-- Presentación -->
+            <div class="row">
+                <div class="col-12 mb-5">
+                    <h1 class="text-success text-center fs-1">¡Registrate en nuestra aplicaci&oacute;n!</h1>
+                </div>
+            </div>
+            
+            <!-- Info -->
+            <div class="row">
+                <div class="col-5 mb-5">
+                    <h3 class="fs-3 text-center">Registrate como cliente nuestro para acceder a tu aplicación MySpa Web. Recuerda que tambi&eacute;n puedes ingresar desde
+                    la aplicaci&oacute;n para m&oacute;vil.</h3>
+                    <h3 class="fs-3 text-center">Descarga la APP:</h3>
+                    <div class="text-center">
+                    <a href="https://play.google.com/"><img src="../../media/img/qr.png" class="align-content-center"></a>
+                    </div>
+                    <h4 class="fs-4 text-center"><i>Todos tus datos estar&aacute;n protegidos por la empresa MySpa, y no ser&aacute;n compartidos con
+                            ninguna persona f&iacute;sica o moral que no sea de tu consentimiento, ser&aacute;n tratados confidencialmente
+                        unicamente por la empresa con fines operacionales.</i></h4>
+                </div>
+            
+            <!-- Formulario -->
+                <div class="col-7 mb-5">
+                    <div class="card">
+                        <div class="card-header">
+                            <h4 class="text-info text-center">Ingresa tus datos:</h4>
+                        </div>
+                        <div class="card-body">
+                            <div class="form">
+                                <div class="my-3">
+                                    <label for="txtNombre" class="form-label">Nombre:</label>
+                                    <input id="txtNombre" type="text" class="form-control" maxlength="30"/>
+                                </div>
+                                <div>
+                                    <label for="txtApellidoP" class="form-label">Apellido Paterno:</label>
+                                    <input id="txtApellidoP" type="text" class="form-control" maxlength="30"/>
+                                </div>
+                                <div class="my-3">
+                                    <label for="txtApellidoM" class="form-label">Apellido Materno:</label>
+                                    <input id="txtApellidoM" type="text" class="form-control" maxlength="30"/>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="rdoSexo" class="form-label">Sexo:  </label>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="rdoSexo" value="M" id="rdoSexoMujer">
+                                        <label class="form-check-label" for="rdoSexoMujer">
+                                            Femenino
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="rdoSexo" value="H" id="rdoSexoHombre">
+                                        <label class="form-check-label" for="rdoSexoHombre">
+                                            Masculino
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="rdoSexo" value="O" id="rdoSexoOtro">
+                                        <label class="form-check-label" for="rdoSexoOtro">
+                                            Otro
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="my-3">
+                                    <label for="txtrfc" class="form-label">RFC:</label>
+                                    <input id="txtrfc" type="text" class="form-control" maxlength="13"/>
+                                </div>
+                                <div class="mb-4">
+                                    <label for="txtEdad" class="form-label">Edad:</label>
+                                    <input id="txtEdad" type="number" class="form-control" min="0" max="100"/>
+                                </div>
+                                <div class="my-3">
+                                    <label for="txtTelefono1" class="form-label">Tel&eacute;fono 1:</label>
+                                    <input id="txtTelefono1" type="text" class="form-control" placeholder="4772337489" maxlength="10">
+                                </div>
+                                <div class="my-3">
+                                    <label for="txtTelefono2" class="form-label">Tel&eacute;fono 2:</label>
+                                    <input id="txtTelefono2" type="text" class="form-control" placeholder="4772337489" maxlength="10">
+                                </div>
+                                <div class="my-3">
+                                    <label for="txtCorreo1" class="form-label">Correo 1:</label>
+                                    <input id="txtCorreo1" type="email" class="form-control" placeholder="example@correo.com" maxlength="50">
+                                </div>
+                                <div class="my-3">
+                                    <label for="txtCorreo2" class="form-label">Correo 2:</label>
+                                    <input id="txtCorreo2" type="email" class="form-control" placeholder="example@correo.com" maxlength="50">
+                                </div>
+                                <div class="my-3">
+                                    <label for="txtCalle" class="form-label">Calle:</label>
+                                    <input id="txtCalle" type="text" class="form-control" maxlength="25"/>
+                                </div>
+                                <div class="my-3">
+                                    <label for="txtNumero" class="form-label">N&uacute;mero:</label>
+                                    <input id="txtNumero" type="text" class="form-control" maxlength="5"/>
+                                </div>
+                                <div class="my-3">
+                                    <label for="txtColonia" class="form-label">Colonia:</label>
+                                    <input id="txtColonia" type="text" class="form-control" maxlength="30"/>
+                                </div>
+                                <div class="my-3">
+                                    <label for="txtCP" class="form-label">CP:</label>
+                                    <input id="txtCP" type="text" class="form-control" maxlength="5"/>
+                                </div>
+                                <div class="my-3">
+                                    <label for="txtUsuario" class="form-label">Nombre de usuario:</label>
+                                    <input id="txtUsuario" type="text" class="form-control" maxlength="20"/>
+                                </div>
+                                <div class="my-3">
+                                    <label for="txtContrasennia" class="form-label">Contraseña:</label>
+                                    <input id="txtContrasennia" type="password" class="form-control" maxlength="15"/>
+                                    <span class="mostrarSpan">Mostrar</span>
+                                </div>
+                                <div class="my-3">
+                                    <label for="txtConfirmContrasennia" class="form-label">Confirmar contraseña:</label>
+                                    <input id="txtConfirmContrasennia" type="password" class="form-control" maxlength="15"/>
+                                    <span class="mostrarSpan">Mostrar</span>
+                                </div>
+                                <div class="mb-3 d-grid gap-2 d-md-flex justify-content-md-end">
+                                    <button class="btn btn-outline-info me-md-2 btn-lg" onclick="registrarCliente();"><i class="fas fa-check"></i>  Ingresar</button>
+                                    <button class="btn btn-outline-secondary btn-lg" onclick="reiniciarFormulario();"><i class="fas fa-trash"></i>  Limpiar</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            
+           <!-- Pie de página -->
+           <footer>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xs-12 col-md-6">
+                            <h6 class="text-muted lead">CONTACTO:</h6>
+                            <h6 class="text-muted">
+                                Blvd. Universidad Tecnológica #225 Col. San Carlos<br>
+                                CP. 37670 León, Gto. Mex. <br>
+                                Tel (477) 7 10 00 20 y (477) 233 74 89<br>
+                            </h6>
+                        </div>
+                        <div class="col-xs-12 col-md-6">
+                            <div class="pull-right">
+                                <h6 class="text-muted lead">ENCUENTRANOS EN LAS REDES</h6>
+                                <div class="redes-footer">
+                                    <a href="https://www.facebook.com/"><img src="../../media/img/facebook.png" class="logos"></a>
+                                    <a href="https://instagram.com/"><img src="../../media/img/instagram.png" class="logos"></a>
+                                    <a href="https://www.youtube.com/"><img src="../../media/img/youtubelogo.png" class="logos"></a>
+                                </div>
+                            </div>
+                        <div class="row"> <p class="text-muted small text-right">Los Estudiabaantes @2021.<br> Todos los derechos reservados.</p></div>
+                        </div>
+                    </div>  
+                </div>
+            </footer>
+           
+            
+        </div>
+    
+        <script type='text/javascript' src='../../js/jquery/jquery-3.6.0.min.js'></script>
+        <!-- Y después se colocan las referencias a los Java Scripts Bootstrap-->
+        <script type='text/javascript' src="../../style/bootstrap/js/bootstrap.bundle.js"></script>
+        <script type='text/javascript' src='registrarse.js'></script>
+    </body>
+</html>

@@ -1,0 +1,209 @@
+<div class="my-3 d-grid gap-2 d-md-flex justify-content-md-end">
+    <a href="gestion/sesion/iniciarsesion.html"><button class="btn btn-outline-info me-md-2 btn-lg">Iniciar sesión</button></a>
+    <a href="gestion/sesion/registrarse.html"><button class="btn btn-outline-info me-md-2 btn-lg">Registrarse</button></a>
+</div>
+
+<!-- Presentación -->
+            <div class="row">
+                <div class="col-12 mb-5">
+                    <h1 class="text-success text-center fs-1">¡Contáctanos!</h1>
+                </div>
+            </div>
+            
+            <!-- Info -->
+            <div class="row">
+                <div class="col-5 mb-5">
+                    <h3 class="text-info fs-3 text-center">Para ponerte en contacto con nosotros para preguntas o sugerencias, puedes llenar nuestros formularios. También aquí puedes revisar las reseñas dadas por nuestros clientes.</h3>
+                    <h3 class="fs-3 text-center">Además puedes contactarnos en el correo: <i class="text-info">contactoCliente@mySpa.com</i> y los télefonos <i class="text-info">(477) 7 10 00 20</i> y <i class="text-info">(477) 233 74 89</i></h3>
+                    
+                    <!-- Lista de sucursales -->
+                    <br><br>
+                    <ul class="list-group">
+                        <li class="list-group-item text-info fs-3">Visitanos en nuestras sucursales:</li>
+                        <li class="list-group-item fs-4">Matriz central: Blvd. Universidad Tecnológica #225 Col. San Carlos CP. 37670
+                        <li class="list-group-item fs-4">Matriz...</li>
+                        <li class="list-group-item fs-4">Matriz...</li>
+                        <li class="list-group-item fs-4">Matriz...</li>
+                        <li class="list-group-item fs-4">Matriz...</li>
+                    </ul>
+                </div>
+            
+            
+           <!-- Agendar -->
+               <div class="col-7 mb-4" id="agendar">
+                   <div class="card">
+                       <div class="card-header">
+                           <h2 class="text-info text-center">Agenda tu cita</h2>
+                       </div>
+                       
+                        <div class="card-body">
+                            <div class="form">
+                                <div class="mb-4">
+                                    <label for="txtNombre" class="form-label">Nombre:</label>
+                                    <input id="txtNombre" type="text" class="form-control"/>
+                                </div>
+                                <div class="mb-4">
+                                    <label for="txtApellidoP" class="form-label">Apellido Paterno:</label>
+                                    <input id="txtApP" type="text" class="form-control"/>
+                                </div>
+                                <div class="mb-4">
+                                    <label for="txtApellidoM" class="form-label">Apellido Materno:</label>
+                                    <input id="txtApM" type="text" class="form-control"/>
+                                </div>
+                                <div class="mb-4">
+                                    <label for="txtEdad" class="form-label">Edad:</label>
+                                    <input id="txtEdad" type="number" class="form-control" min="0" max="100"/>
+                                </div>
+                                <div class="mb-4">
+                                    <label for="rdoSexo" class="form-label">Sexo:  </label>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="rdoSexo" value="M" id="rdoSexoM">
+                                        <label class="form-check-label" for="rdoSexoMujer">
+                                        Femenino
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="rdoSexo" value="H" id="rdoSexoH">
+                                        <label class="form-check-label" for="rdoSexoHombre">
+                                        Masculino
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="rdoSexo" value="O" id="rdoSexoO">
+                                        <label class="form-check-label" for="rdoSexoOtro">
+                                        Otro
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="mb-4">
+                                    <label for="txtTelefono" class="form-label">Teléfono:</label>
+                                    <input id="txtTelefono" type="number" class="form-control" pattern="[0-9]{3}-[0-9]{7}" placeholder="477-2337480">
+                                </div>
+                                <div class="mb-4">
+                                    <label for="txtCorreo" class="form-label">Correo:</label>
+                                    <input id="txtCorreo" type="email" class="form-control" placeholder="example@correo.com">
+                                </div>
+                                <div class="mb-4">
+                                    <label for="lstSucursal" class="form-label">Sucursal:</label>
+                                    <select class="form-select" aria-label="lstSucursal" id="lstSucursal">
+                                        <option value="AS">Matriz Central</option>
+                                        <option value="BC">Matriz ...</option>
+                                        <option value="BS">Matriz ...</option>
+                                        <option value="CC">Matriz ...</option>
+                                        <option value="CL">Matriz ...</option>
+                                        <option value="CM">Matriz ...</option>
+                                    </select>
+                                </div>
+                                
+                                <!--Botones -->
+                                <div class="mb-3 d-grid gap-2 d-md-flex justify-content-md-end">
+                                    <button class="btn btn-outline-info me-md-2 btn-lg" onclick="Agendar();"><i class="fas fa-check"></i>  Agendar</button>
+                                    <button class="btn btn-outline-secondary btn-lg" onclick="reiniciarFormulario();"><i class="fas fa-trash"></i>  Limpiar</button>
+                                </div>
+                            </div>
+                        </div>
+               </div>
+           </div>
+           
+           <!-- Opiniones -->
+           <div class="row">
+               <div class="col-5 mb-4">
+                   <div class="card">
+                       <div class="card-header">
+                           <h2 class="text-info text-center">Sugerencias y comentarios</h2>
+                       </div>
+                       
+                        <div class="card-body">
+                            <div class="form">
+                                <div class="mb-4">
+                                    <label for="txtNombre" class="form-label">Nombre:</label>
+                                    <input id="txtNombre" type="text" class="form-control"/>
+                                </div>
+                                <div class="mb-4">
+                                    <label for="txtApellidoP" class="form-label">Apellido Paterno:</label>
+                                    <input id="txtApP" type="text" class="form-control"/>
+                                </div>
+                                <div class="mb-4">
+                                    <label for="txtApellidoM" class="form-label">Apellido Materno:</label>
+                                    <input id="txtApM" type="text" class="form-control"/>
+                                </div>
+                                <div class="mb-4">
+                                    <label for="txtEdad" class="form-label">Edad:</label>
+                                    <input id="txtEdad" type="number" class="form-control" min="0" max="100"/>
+                                </div>
+                                
+                                <div class="mb-4">
+                                    <label for="txtTelefono" class="form-label">Teléfono:</label>
+                                    <input id="txtTelefono" type="number" class="form-control" pattern="[0-9]{3}-[0-9]{7}" placeholder="477-2337480">
+                                </div>
+                                <div class="mb-4">
+                                    <label for="txtCorreo" class="form-label">Correo:</label>
+                                    <input id="txtCorreo" type="email" class="form-control" placeholder="example@correo.com">
+                                </div>
+                                <div class="mb-4">
+                                    <label for="lstSucursal" class="form-label">Sucursal visitada:</label>
+                                    <select class="form-select" aria-label="lstSucursal" id="lstSucursal">
+                                        <option value="AS">Matriz Central (Dirección)</option>
+                                        <option value="BC">Matriz ...</option>
+                                        <option value="BS">Matriz ...</option>
+                                        <option value="CC">Matriz ...</option>
+                                        <option value="CL">Matriz ...</option>
+                                        <option value="CM">Matriz ...</option>
+                                    </select>
+                                </div>
+                                <div class="mb-4">
+                                    <label for="txtComentario" class="form-label">Sugerencia o comentario:</label>
+                                    <textarea class="form-control" id="txtComentario" rows="5"></textarea>
+                                </div>
+                                
+                                <!--Botones -->
+                                <div class="mb-3 d-grid gap-2 d-md-flex justify-content-md-end">
+                                    <button class="btn btn-outline-info me-md-2 btn-lg" onclick="Enviar();"><i class="fas fa-check"></i>  Enviar</button>
+                                        <button class="btn btn-outline-secondary btn-lg" onclick="reiniciarFormulario();"><i class="fas fa-trash"></i>  Limpiar</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+               </div>
+           
+            <!-- Reseñas -->
+               <div class="col-7 mb-4" id="reseñas">
+                   <div class="card">
+                       <div class="card-header">
+                           <h2 class="text-info text-center">Reseñas</h2>
+                       </div>
+                       <div class="card-body">
+                    <ol class="list-group list-group-numbered">
+                        <li class="list-group-item d-flex justify-content-between align-items-start">
+                            <div class="ms-2 me-auto">
+                            <div class="fw-bold">Sandra Ramírez</div>
+                            Excelente servicio
+                            </div>
+                            <span class="badge bg-primary rounded-pill">10 likes</span>
+                        </li>
+                        <li class="list-group-item d-flex justify-content-between align-items-start">
+                            <div class="ms-2 me-auto">
+                            <div class="fw-bold">Citlalli Medina</div>
+                            ¡Me encantó el servicio y el trato de los empleados!
+                            </div>
+                            <span class="badge bg-primary rounded-pill">12 likes</span>
+                        </li>
+                        <li class="list-group-item d-flex justify-content-between align-items-start">
+                            <div class="ms-2 me-auto">
+                            <div class="fw-bold">Alexa Guerrero</div>
+                            Muy cómodas instalaciones y servicios de calidad
+                            </div>
+                            <span class="badge bg-primary rounded-pill">11 likes</span>
+                        </li>
+                        <li class="list-group-item d-flex justify-content-between align-items-start">
+                            <div class="ms-2 me-auto">
+                            <div class="fw-bold">Mauricio Gárnica</div>
+                            Excelente la calidad de los tratamientos y la atención de los empleados.
+                            </div>
+                            <span class="badge bg-primary rounded-pill">9 likes</span>
+                        </li>
+                    </ol>
+                    </div>
+               </div>
+             </div>
+           </div>

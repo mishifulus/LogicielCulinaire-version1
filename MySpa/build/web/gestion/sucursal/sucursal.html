@@ -1,0 +1,100 @@
+<div class="row my-3">
+    <div class="row mb-3 col-md-10 align-items-center justify-content-center" id="titulo">
+        <div class="col-md-6">
+            <h2 class="fw-bold text-center text-success">SUCURSALES</h2>
+        </div>
+        <div class="col-md-4">
+            <div class="input-group rounded">
+                <input id="txtFiltro" type="search" class="form-control rounded-end" style="border-radius: 20px" placeholder="Buscar" aria-label="Search"
+                       aria-describedby="search-addon" />
+                <button class="btn btn-outline-success border-1 rounded-start" style="border-radius: 20px;" onclick="buscarSucursal();">
+                    <i class="fas fa-search"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row my-3">
+    <div id="divDetalleSucursal" class="col-4">
+        <div class="card">
+            <div class="card-header">
+                <span class="text-success h5">Detalle</span>
+                <button class="btn-sm btn-outline-danger float-end" onclick="setFormularioDetalleVisible(false);">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="card-body">
+                <div class="form">
+                        <input id="txtIdSucursal" type="text" class="form-control" readonly style="display:none"/>
+                    <div class="my-3">
+                        <label for="txtNombre" class="form-label">Nombre:</label>
+                        <input id="txtNombre" type="text" class="form-control" maxlength="30" onkeypress="return event.charCode >= 65 && event.charCode <= 90 || event.charCode === 32 || event.charCode >= 97 && event.charCode <= 122 || event.charCode === 46"/>
+                    </div>
+                    <div class="my-3">
+                        <label for="txtDomicilio" class="form-label">Domicilio:</label>
+                        <input id="txtDomicilio" type="text" class="form-control" maxlength="50"/>
+                    </div>
+                    <div>
+                        <label for="txtLatitud" class="form-label">Latitud:</label>
+                        <input id="txtLatitud" type="text" class="form-control" maxlength="30" onkeypress="return event.charCode >= 48 && event.charCode <= 57 || event.charCode === 46 || event.charCode === 45"/>
+                    </div>
+                    <div class="my-3">
+                        <label for="txtLongitud" class="form-label">Longitud:</label>
+                        <input id="txtLongitud" type="text" class="form-control" maxlength="30" onkeypress="return event.charCode >= 48 && event.charCode <= 57 || event.charCode === 46 || event.charCode === 45"/>
+                    </div>
+                    <div class="my-3">
+                        <label for="txtEstatus" class="form-label">Estatus:</label>
+                        <input id="txtEstatus" type="text" class="form-control" readonly/>
+                    </div>
+                    <div class="text-center my-4">
+                        <button class="btn btn-success" onclick="guardarSucursal();"><i class="fas fa-save"></i>&nbsp;&nbsp;Guardar</button>
+                        <button class="btn btn-primary" onclick="limpiarFormulario();"><i class="fas fa-backspace"></i>&nbsp;&nbsp;Limpiar</button>
+                    </div>
+                </div> 
+            </div>
+        </div>
+    </div>
+    
+    <div id="divTablaSucursales" class="col-12">
+        <div class="card">
+            <div class="card-header">
+                <span class="text-success h5">Cat&aacute;logo</span>
+                <button class="btn-sm btn-outline-primary float-end mx-3" onclick="refrescarTablaInactivos();">
+                    &nbsp;&nbsp;Inactivos&nbsp;
+                </button>
+                <button class="btn-sm btn-outline-primary float-end mx-3" onclick="refrescarTablaSucursal();">
+                    &nbsp;&nbsp;Activos&nbsp;
+                </button>
+                <button class="btn-sm btn-outline-danger float-end mx-3" onclick="cerrarModulo();">
+                    <i class="fas fa-times"></i>&nbsp;&nbsp;Cerrar M&oacute;dulo&nbsp;
+                </button>
+                <button class="btn-sm btn-outline-success float-end mx-3" onclick="agregarNuevo();">
+                    <i class="fas fa-check"></i>&nbsp;&nbsp;Agregar nuevo&nbsp;
+                </button>
+            </div>
+            <div class="card-body">
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th>N°</th>
+                            <th>Nombre</th>
+                            <th>Domicilio</th>
+                            <th>Latitud</th>
+                            <th>Longitud</th>
+                            <th>Estatus</th>
+                            <th></th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody id="tbodySucursales">
+                                    
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript" src="gestion/sucursal/cargarSucursal.js"></script>
+<script type="text/javascript">
+    inicializarModuloSucursal();
+</script>

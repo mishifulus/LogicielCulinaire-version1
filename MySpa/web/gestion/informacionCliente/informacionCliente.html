@@ -1,0 +1,104 @@
+<div class="row">
+    <div class="col-12 my-4">
+        <h1 class="text-success text-center fs-1 fw-bold">Modificar cuenta</h1>
+    </div>
+</div>
+            
+<!-- Formulario -->
+<div class="row my-3">
+    <div id="divDetalleCliente" class="col-6 mx-auto">
+        <div class="card">
+            <div class="card-header">
+                <span class="text-success h5">Detalle del Cliente</span>
+            </div>
+                <div class="card-body">
+                    <div class="form">
+                            <input id="txtCodigoCliente" type="text" class="form-control" readonly style="display:none"/>
+                            <input id="txtCodigoPersona" type="text" class="form-control" readonly style="display:none"/>
+                            <input id="txtCodigoUsuario" type="text" class="form-control" readonly style="display:none"/>
+                            <input id="txtEstatus" type="text" class="form-control" readonly style="display:none"/>
+                        <div class="my-3">
+                            <label for="txtNumeroUni" class="form-label">N&uacute;mero único de cliente:</label>
+                            <input id="txtNumeroUni" type="text" class="form-control" maxlength="30"/>
+                        </div>
+                        <div class="my-3">
+                            <label for="txtNombre" class="form-label">Nombre:</label>
+                            <input id="txtNombre" type="text" class="form-control" maxlength="30"/>
+                        </div>
+                        <div>
+                            <label for="txtApellidoP" class="form-label">Apellido Paterno:</label>
+                            <input id="txtApellidoP" type="text" class="form-control" maxlength="30"/>
+                        </div>
+                        <div class="my-3">
+                            <label for="txtApellidoM" class="form-label">Apellido Materno:</label>
+                            <input id="txtApellidoM" type="text" class="form-control" maxlength="30"/>
+                        </div>
+                        <div class="mb-3">
+                            <label for="rdoGenero" class="form-label">G&eacute;nero:  </label>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="rdoGenero" value="M" id="rdoGeneroFemenino">
+                                <label class="form-check-label" for="rdoGeneroFemenino">
+                                    Femenino
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="rdoGenero" value="H" id="rdoGeneroMasculino">
+                                <label class="form-check-label" for="rdoGeneroMasculino">
+                                    Masculino
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="rdoGenero" value="O" id="rdoGeneroOtro">
+                                <label class="form-check-label" for="rdoGeneroOtro">
+                                    Otro
+                                </label>
+                            </div>
+                        </div>
+                        <div class="my-3">
+                            <label for="txtRFC" class="form-label">RFC:</label>
+                            <input id="txtRFC" type="text" class="form-control" maxlength="13"/>
+                        </div>
+                        <div class="my-3">
+                            <label for="txtTelefono" class="form-label">Tel&eacute;fono:</label>
+                            <input id="txtTelefono" type="text" class="form-control" placeholder="4772337489" maxlength="10">
+                        </div>
+                        <div class="my-3">
+                            <label for="txtCorreo" class="form-label">Correo:</label>
+                            <input id="txtCorreo" type="email" class="form-control" placeholder="example@correo.com" maxlength="50">
+                        </div>
+                        <div class="my-3">
+                            <label for="txtDomicilio" class="form-label">Domicilio:</label>
+                            <input id="txtDomicilio" type="text" class="form-control" maxlength="25"/>
+                        </div>
+                        <div class="my-3">
+                            <label for="txtUsuario" class="form-label">Nombre de usuario:</label>
+                            <input id="txtUsuario" type="text" class="form-control" maxlength="20"/>
+                        </div>
+                        <div class="my-3">
+                            <label for="txtRol" class="form-label">Rol:</label>
+                            <input id="txtRol" type="text" class="form-control" maxlength="20"/>
+                        </div>
+                        <div class="my-3">
+                            <label for="txtContrasenia" class="form-label">Contraseña:</label>
+                            <input id="txtContrasenia" type="password" class="form-control" maxlength="15"/>
+                            <span class="mostrarSpan">Mostrar</span>
+                        </div>
+                        <div class="my-3">
+                            <label for="txtConfirmContrasenia" class="form-label">Confirmar contraseña:</label>
+                            <input id="txtConfirmContrasenia" type="password" class="form-control" maxlength="15"/>
+                            <span class="mostrarSpan">Mostrar</span>
+                        </div>
+                            <div class="text-center my-4">
+                                <button class="btn btn-success" onclick="guardarCliente();"><i class="fas fa-save"></i>&nbsp;&nbsp;Guardar</button>
+                                <button class="btn btn-primary" onclick="limpiarFormulario();"><i class="fas fa-backspace"></i>&nbsp;&nbsp;Limpiar</button>
+                            </div>
+                    </div> 
+                </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript" src="gestion/informacionCliente/informacionCliente.js"></script>
+<script type='text/javascript' src='../../js/jquery/menuPrincipalCliente.js'></script>
+<script type="text/javascript">
+    inicializarModuloClienteInfo();
+</script>

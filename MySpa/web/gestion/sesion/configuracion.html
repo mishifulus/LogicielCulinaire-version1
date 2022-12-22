@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>MySpa | Configuraci&oacute;n</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="MySpa">
+        <meta name="keywords" content="HTML, Aplicacion">
+        <meta name="author" content="Los Estudiabaantes">
+        <link rel="stylesheet" type="text/css" href="../../style/bootstrap/css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css"  href="../../style/font_awesome_5_15_3/css/all.min.css">
+        <link rel="stylesheet" type="text/css" href="../../style/principalAplicacion.css"/>
+    </head>
+    <body>
+        <div class="container-fluid">
+        <!-- Navegación -->
+            <div class="row">
+                <div class="col-12  mb-5">
+                    <nav class="navbar navbar-dark bg-dark">
+                        <div class="container-fluid">
+                            <a class="navbar-brand" href="../../index.html"><img src="../../media/img/logo.png" alt="Logo" width="90" class="d-inline-block align-text-top"></a>
+                            <a class="navbar-brand">Restablecer contraseña</a>
+                            <a class="navbar-brand" href="iniciarsesion.html">Volver</a>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+            
+            <!-- Presentación -->
+            <div class="row">
+                <div class="col-12 mb-5">
+                    <h1 class="text-success text-center fs-1">MySpa</h1>
+                </div>
+            </div>
+        <!-- Info -->
+            <div class="row">
+                <div class="col-5 mb-5">
+                    <h3 class="fs-3 text-center">Configura nuevamente tu contraseña ingresando tu correo electr&oacute;nico.</h3>
+                    <h3 class="fs-3 text-center">En tu correo te llegar&aacute; tu nueva contraseña.</h3><br>
+                    <h4 class="fs-4 text-center"><i>Todos tus datos estar&aacute;n protegidos por la empresa MySpa, y no ser&aacute;n compartidos con
+                            ninguna persona f&iacute;sica o moral que no sea de tu consentimiento, ser&aacute;n tratados confidencialmente
+                        unicamente por la empresa con fines operacionales.</i></h4>
+                </div>
+            
+            <!-- Formulario -->
+                <div class="col-7 mb-5">
+                    <div class="card">
+                        <div class="card-header">
+                            <h4 class="text-info text-center">Ingresa tus datos de sesi&oacute;n:</h4>
+                        </div>
+                        <div class="card-body">
+                            <div class="form">
+                                <div class="mb-4">
+                                    <label for="txtUsuario" class="form-label">Nombre de usuario:</label>
+                                    <input id="txtUsuario" type="text" class="form-control"/>
+                                </div>
+                                <div class="mb-5">
+                                    <label for="txtCorreoContrasennia" class="form-label">Correo electr&oacute;nico:</label>
+                                    <input id="txtCorreoContrasennia" type="email" class="form-control"/>
+                                </div>
+                                <div class="mb-3 d-grid gap-2 d-md-flex justify-content-md-end">
+                                    <button class="btn btn-outline-info me-md-2 btn-lg" onclick="cambiarContrasennia();"><i class="fas fa-check"></i>  Enviar</button>
+                                    <button class="btn btn-outline-secondary btn-lg" onclick="reiniciarFormulario();"><i class="fas fa-trash"></i>  Limpiar</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        <!-- Pie de página -->
+           <footer>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xs-12 col-md-6">
+                            <h6 class="text-muted lead">CONTACTO:</h6>
+                            <h6 class="text-muted">
+                                Blvd. Universidad Tecnol&oacute;gica #225 Col. San Carlos<br>
+                                CP. 37670 Le&oacute;n, Gto. Mex. <br>
+                                Tel (477) 7 10 00 20 y (477) 233 74 89<br>
+                            </h6>
+                        </div>
+                        <div class="col-xs-12 col-md-6">
+                        <div class="row"> <p class="text-muted small text-right">Los Estudiabaantes @2021.<br> Todos los derechos reservados.</p></div>
+                        </div>
+                    </div>  
+                </div>
+            </footer>
+        </div>
+    
+        <script type='text/javascript' src='../../js/jquery/jquery-3.6.0.min.js'></script>
+        <!-- Y después se colocan las referencias a los Java Scripts Bootstrap-->
+        <script type='text/javascript' src="../../style/bootstrap/js/bootstrap.bundle.js"></script>
+        <script type='text/javascript' src='configuracion.js'></script>
+    </body>
+</html>
